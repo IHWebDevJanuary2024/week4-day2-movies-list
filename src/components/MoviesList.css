@@ -1,0 +1,19 @@
+.movie-card {
+    background-color: rgb(229, 119, 189);
+    color: aliceblue;
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 18px 37px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 18px 37px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 18px 37px -12px rgba(0, 0, 0, 0.75);
+}
+
+.cards-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+}
