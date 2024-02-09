@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function MovieCard(props) {
     const movie = props.movie;
 
@@ -19,6 +21,9 @@ function MovieCard(props) {
             <p>{movie.IMDBRating}</p>
             {movie.hasOscars ? '🏆' : '💩'} {/* we can add it here directly */}
             <button onClick={() => props.deleteCard(movie._id)}>🗑️</button>
+            <Link to={`/edit/${movie._id}`}>
+                <button>✏️</button>
+            </Link>
             {/*  <button onClick={() => console.log(movie._id)}>🗑️</button> */}
         </li>
     )

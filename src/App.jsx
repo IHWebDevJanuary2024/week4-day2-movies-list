@@ -2,9 +2,12 @@
 import { useState } from 'react';
 import './App.css'
 import MoviesList from './components/MoviesList'
+import { Routes, Route } from 'react-router-dom';
+import EditPage from './pages/EditPage';
+import MoviesData from './movies-list.json'
 
 function App() {
-  const [showMovies, setShowMovies] = useState(false);
+  const [movies, setMovies] = useState(MoviesData)
 
   // Whenever our page is ready we set the loading to false
 
@@ -12,10 +15,10 @@ function App() {
 
   return (
     <>
-      <button onClick={() => setShowMovies(!showMovies)}>{showMovies ? "Hide" : "Show"} Movies</button>
-      {
-        showMovies ? <MoviesList /> : <h1>Sorry, you don't have access to the movies</h1>
-      }
+      <Routes>
+        <Route path="/" element={<MoviesList movies={movies} setMovies={setMovies} />} />
+        <Route path='/edit/:id' element={<EditPage  movies={movies} setMovies={setMovies} />} />
+      </Routes>
     </>
   )
 }

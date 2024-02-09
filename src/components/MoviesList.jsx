@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import MoviesData from '../movies-list.json'
+
 import './MoviesList.css'
 import MovieCard from './MovieCard';
 
-function MoviesList() {
-    const [movies, setMovies] = useState(MoviesData)
+function MoviesList(props) {
+    const movies = props.movies;
+    const setMovies = props.setMovies;
 
-    console.log(MoviesData);
+
 
     function deleteCard(movieID) {
         console.log("The selected card is: ", movieID);
-        const newArrayOfMovies = movies.filter((movie)=>{
+        const newArrayOfMovies = movies.filter((movie) => {
             return movieID !== movie._id
         })
         console.log(newArrayOfMovies);
